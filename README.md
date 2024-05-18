@@ -7,11 +7,10 @@ This project is a simple web application that summarizes information related to 
 To run this project locally, follow these steps:
 1. Clone the repository.
 ```bash
-git clone https://github.com/Abdusshh/LudiSoftwareEngineerInternCase
+git clone https://github.com/Abdusshh/ludi_project.git
 ```
 2. Install the required dependencies: 
 ```bash
-cd ludi_project
 pip install -r requirements.txt
 ```
 3. Migrate the database:
@@ -26,4 +25,4 @@ python manage.py runserver
 Then, open your browser and navigate to `http://localhost:8000/ludi_app/users_per_company/` or `http://localhost:8000/ludi_app/daily_user_growth/` to view the data.
 
 ## Minor Modifications
-I deleted two users in the `users.json` file to avoid conflicts of having the same `user_id`.
+I had to delete two users in the `users.json` file to avoid conflicts of some users having the same `user_id`.

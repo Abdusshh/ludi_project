@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily User Growth</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Daily User Growth</h1>
+    <canvas id="userGrowthChart"></canvas>
+
+    <script>
+        // Get the chart canvas element
+        var ctx = document.getElementById('userGrowthChart').getContext('2d');
+
+        // Define the data for the chart
+        var data = {
+            labels: {{context_labels | safe}}, 
+            datasets: [{
+                label: 'Total Users',
+                data: {{context_data| safe}}, 
+                backgroundColor: '#007BFF80', 
+                borderColor: '#007BFF', 
+                borderWidth: 1
+            }]
+        };
+
+        // Create the chart
+        var userGrowthChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <a href="{% url 'users_per_company' %}">Users Per Company</a>
+</body>
+</html>

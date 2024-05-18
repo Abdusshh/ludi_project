@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users Per Company</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #d5d6d6;
+        }
+        
+        th {
+            background-color: #007BFF;
+        }
+        
+        tr:hover {
+            background-color: #007BFF80;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users Per Company</h1>
+    <table>
+        <tr>
+            <th>Company Name</th>
+            <th>Total Users</th>
+        </tr>
+        {% for company in companies %}
+        <tr>
+            <td>{{ company.company_name }}</td>
+            <td>{{ company.total_users }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'daily_user_growth' %}">Daily User Growth</a>
+</body>
+</html>
